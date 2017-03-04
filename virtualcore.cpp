@@ -24,8 +24,10 @@ namespace virtualbin
 
     void VirtualCore::run()
     {
-        while()
+        InstructionParser parser;
+        while(true)
         {
+            parser.parse(&*veip);
 
         }
     }

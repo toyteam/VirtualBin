@@ -3,6 +3,7 @@
 #include<cstdint>
 namespace virtualbin
 {
+    using byte=uint8_t;
     class VirtualMemory
     {
     public:

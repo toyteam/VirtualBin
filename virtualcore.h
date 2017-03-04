@@ -2,6 +2,7 @@
 #define CORE_H
 #include<cstdint>
 #include"virtualmemory.h"
+#include"instructionparser.h"
 namespace virtualbin
 {
     class VirtualCore

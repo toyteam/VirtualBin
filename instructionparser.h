@@ -1,0 +1,24 @@
+#ifndef INSTRUCTIONPARSER_H
+#define INSTRUCTIONPARSER_H
+#include"virtualmemory.h"
+
+#define 28 pfNum;
+
+namespace virtualbin
+{
+    uint8_t pfList[pfNum]={0x26,0x2E,
+                      0x36,0x3E,
+                      0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,
+                      0x64,0x65,0x66,0x67,
+                      0xF3,0x9B,
+                      0xF0,0xF2,0xF3};
+    class InstructionParser
+    {
+    public:
+        InstructionParser();
+        int parse(uint8_t * source);
+    };
+}
+
+
+#endif // INSTRUCTIONPARSER_H
