@@ -3,27 +3,37 @@
 #include<cstdint>
 #include"virtualmemory.h"
 #include"instructionparser.h"
+
+#define pfNum 29
+
 namespace virtualbin
 {
+    extern uint8_t pfList[pfNum];
+    using RegType=uint32_t;
     class VirtualCore
     {
     public:
         VirtualCore();
         VirtualCore(uint8_t * memory);
 
-        uint32_t veax,vebx,vecx,vedx;
-        uint32_t vesi,vedi;
-        uint32_t vesp,vebp;
-        uint32_t ves,vcs,vss,vds,vfs,vgs;
-        uint32_t veip;
-        uint32_t veFlags;
+        RegType veax,vebx,vecx,vedx;
+        RegType vesi,vedi;
+        RegType vesp,vebp;
+        RegType ves,vcs,vss,vds,vfs,vgs;
+        RegType veip;
+        RegType veFlags;
 
-        void mountMemory(const VirtualMemory &mem){this->mem=mem;}
-        void reset(uint32_t reg){reg=0;}
+        void mountMemory(VirtualMemory &mem){this->mem=&mem;}
+        void reset(RegType * reg){*reg=0;}
         void run();
         void stop();
+    protected:
+        int parse(byteptr source);
+        std::pair<bool,uint8_t> getPrefix(byteptr source);
+        byte getReg(byteptr source);
+        RegType * getAddress(byteptr source);
     private:
-        uint8_t * mem;
+        VirtualMemory * mem;
     };
 
 }

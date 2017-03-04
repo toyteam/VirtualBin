@@ -9,12 +9,12 @@ namespace virtualbin
     }
     VirtualMemory::VirtualMemory(uint32_t size)
     {
-        data=new uint8_t(size);
+        data=new uint8_t[size];
     }
 
     VirtualMemory::~VirtualMemory()
     {
-        delete data;
+        delete []data;
     }
 }
 

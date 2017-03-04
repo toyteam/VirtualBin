@@ -7,16 +7,6 @@ namespace virtualbin
 
     }
 
-    int InstructionParser::parse(uint8_t *source)
-    {
-        for(int i=0;i<pfNum;++i)
-        {
-            if(*source==pfList[i])
-            {
 
-            }
-        }
-
-    }
 
 }
