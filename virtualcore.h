@@ -31,6 +31,8 @@ namespace virtualbin
         int parse(byteptr source);
         std::pair<bool,uint8_t> getPrefix(byteptr source);
         byte getReg(byteptr source);
+        byte getMod(byteptr source);
+        byte getRM(byteptr source);
         RegType * getAddress(byteptr source);
     private:
         VirtualMemory * mem;

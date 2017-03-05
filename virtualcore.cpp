@@ -91,9 +91,158 @@ namespace virtualbin
         return ((mem->get(source))&0x38)>>3;
     }
 
+    byte VirtualCore::getMod(byteptr source)
+    {
+        return ((mem->get(source))&0xC0)>>6;
+    }
+
+    byte VirtualCore::getRM(byteptr source)
+    {
+        return (mem->get(source))&0x3;
+    }
+
     RegType * VirtualCore::getAddress(byteptr source)
     {
+        if(getMod(source)==0x0)
+        {
+            if(getRM(source)==0x0)
+            {
 
+            }
+            else if(getRM(source)==0x1)
+            {
+
+            }
+            else if(getRM(source)==0x2)
+            {
+
+            }
+            else if(getRM(source)==0x3)
+            {
+
+            }
+            else if(getRM(source)==0x4)
+            {
+
+            }
+            else if(getRM(source)==0x5)
+            {
+
+            }
+            else if(getRM(source)==0x6)
+            {
+
+            }
+            else if(getRM(source)==0x7)
+            {
+
+            }
+        }
+        else if(getMod(source)==0x1)
+        {
+            if(getRM(source)==0x0)
+            {
+
+            }
+            else if(getRM(source)==0x1)
+            {
+
+            }
+            else if(getRM(source)==0x2)
+            {
+
+            }
+            else if(getRM(source)==0x3)
+            {
+
+            }
+            else if(getRM(source)==0x4)
+            {
+
+            }
+            else if(getRM(source)==0x5)
+            {
+
+            }
+            else if(getRM(source)==0x6)
+            {
+
+            }
+            else if(getRM(source)==0x7)
+            {
+
+            }
+        }
+        else if(getMod(source)==0x2)
+        {
+            if(getRM(source)==0x0)
+            {
+
+            }
+            else if(getRM(source)==0x1)
+            {
+
+            }
+            else if(getRM(source)==0x2)
+            {
+
+            }
+            else if(getRM(source)==0x3)
+            {
+
+            }
+            else if(getRM(source)==0x4)
+            {
+
+            }
+            else if(getRM(source)==0x5)
+            {
+
+            }
+            else if(getRM(source)==0x6)
+            {
+
+            }
+            else if(getRM(source)==0x7)
+            {
+
+            }
+        }
+        else if(getMod(source)==0x3)
+        {
+            if(getRM(source)==0x0)
+            {
+
+            }
+            else if(getRM(source)==0x1)
+            {
+
+            }
+            else if(getRM(source)==0x2)
+            {
+
+            }
+            else if(getRM(source)==0x3)
+            {
+
+            }
+            else if(getRM(source)==0x4)
+            {
+
+            }
+            else if(getRM(source)==0x5)
+            {
+
+            }
+            else if(getRM(source)==0x6)
+            {
+
+            }
+            else if(getRM(source)==0x7)
+            {
+
+            }
+        }
     }
 }
 
