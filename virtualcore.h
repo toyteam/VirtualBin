@@ -22,6 +22,8 @@ namespace virtualbin
         RegType ves,vcs,vss,vds,vfs,vgs;
         RegType veip;
         RegType veFlags;
+        RegType vcr0,vcr1,vcr2;
+
 
         void mountMemory(VirtualMemory &mem){this->mem=&mem;}
         void reset(RegType * reg){*reg=0;}
@@ -33,7 +35,7 @@ namespace virtualbin
         byte getReg(byteptr source);
         byte getMod(byteptr source);
         byte getRM(byteptr source);
-        RegType * getAddress(byteptr source);
+        RegType * getAddress32(int groupPos, byteptr source);
     private:
         VirtualMemory * mem;
     };

@@ -6,9 +6,11 @@ CONFIG -= qt
 SOURCES += main.cpp \
     virtualmemory.cpp \
     virtualcore.cpp \
-    instructionparser.cpp
+    instructionparser.cpp \
+    instruction.cpp
 
 HEADERS += \
     virtualmemory.h \
     virtualcore.h \
-    instructionparser.h
+    instructionparser.h \
+    instruction.h

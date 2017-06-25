@@ -64,7 +64,7 @@ namespace virtualbin
             else if(po==0x00)
             {
                 //ADD
-                RegType *op1=getAddress(source);
+                RegType *op1=getAddress32(source);
                 byte op2=getReg(source);
 
             }
@@ -101,7 +101,7 @@ namespace virtualbin
         return (mem->get(source))&0x3;
     }
 
-    RegType * VirtualCore::getAddress(byteptr source)
+    RegType * VirtualCore::getAddress32(int groupPos, byteptr source)
     {
         if(getMod(source)==0x0)
         {
@@ -212,35 +212,62 @@ namespace virtualbin
         {
             if(getRM(source)==0x0)
             {
+                if(groupPos==0x0)
+                {
+                    return &veax;
+                }
+                else if(groupPos==0x1)
+                {
 
+                }
+                else if(groupPos==0x2)
+                {
+
+                }
+                else if(groupPos==0x3)
+                {
+
+                }
+                else if(groupPos==0x4)
+                {
+
+                }
+                else if(groupPos==0x5)
+                {
+
+                }
+                else if(groupPos==0x6)
+                {
+
+                }
             }
             else if(getRM(source)==0x1)
             {
-
+                return &vecx;
             }
             else if(getRM(source)==0x2)
             {
-
+                return &vedx;
             }
             else if(getRM(source)==0x3)
             {
-
+                return &vebx;
             }
             else if(getRM(source)==0x4)
             {
-
+                return &vesp;
             }
             else if(getRM(source)==0x5)
             {
-
+                return &vebp;
             }
             else if(getRM(source)==0x6)
             {
-
+                return &vesi;
             }
             else if(getRM(source)==0x7)
             {
-
+                return &vedi;
             }
         }
     }
